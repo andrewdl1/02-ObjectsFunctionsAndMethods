@@ -78,9 +78,9 @@ print(c)
 ###############################################################################
 def turtle (color, thickness):
     window = rg.TurtleWindow()
-    joe = rg.SimpleTurtle()
+    joe = rg.SimpleTurtle('turtle')
     joe.pen = rg.Pen('green', thickness)
-    jack = rg.SimpleTurtle()
+    jack = rg.SimpleTurtle('turtle')
     jack.pen = rg.Pen(color, 5)
     joe.forward(100)
     jack.backward(100)

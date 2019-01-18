@@ -2,8 +2,8 @@
 This module lets you practice correcting SYNTAX (notation) errors.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Dalton Andrew.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # TODO: 2.
@@ -36,10 +36,10 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions in this module to demo them. """
     print_math()
-    tutle_fn()
+    turtle_fun()
 
 
-def print_math:
+def print_math():
     """ Prints some calculated values. """
     x = cos(pi)
     print(x)
@@ -57,19 +57,19 @@ def turtle_fun():
     window = rg.TurtleWindow()
 
     alan = rg.SimpleTurtle()
-alan.pen = rg.Pen('blue', 30)
+    alan.pen = rg.Pen('blue', 30)
     alan.paint_bucket = rg.PaintBucket('yellow')
 
-    alan.back(3 * (47 + 16)
-    al.begin_fill()
-    alan.circle(25)
-    alan.end_fill()
+    alan.backward(3 * (47 + 16),
+    alan.begin_fill(),
+    alan.circle(25),
+    alan.end_fill().
 
-    forward(200)
+    forward(200),
 
-    window.close_on_mouse_click()
+    window.close_on_mouse_click(),
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
-main()
+main())
