@@ -21,9 +21,16 @@ def main():
     # comment-out the following two statements and replace them
     # by calls to   better_draw_circles   et al as needed.
     # -------------------------------------------------------------------------
-    draw_circles(rg.Point(100, 50))
-    draw_circles(rg.Point(-200, 0))
-
+    #better_draw_circles(rg.Point(100, 50), 5)
+    #better_draw_circles(rg.Point(-200, 0), 10)
+    #even_better_draw_circles(rg.Point(0, 0), 5, 15, 'red', 3)
+    #even_better_draw_circles(rg.Point(100, 100), 1, 20, 'blue', 1)
+    even_better_draw_circles(rg.Point(200, 200), 2, 10, 'brown', 10)
+    even_better_draw_circles(rg.Point(-200, 200), 2, 10, 'red', 10)
+    even_better_draw_circles(rg.Point(-200, -200), 2, 10, 'blue', 10)
+    even_better_draw_circles(rg.Point(200, -200), 2, 10, 'green', 10)
+    even_better_draw_circles(rg.Point(0, 200), 2, 10, 'black', 1)
+    even_better_draw_circles(rg.Point(200, -198), 2, 3, 'yellow', 10)
     window.update()
     window.close_on_mouse_click()
 
@@ -90,7 +97,7 @@ def draw_circles(point):
 
 
 ###############################################################################
-# TODO: 3a.
+# DONE: 3a.
 #   The function
 #       better_draw_circles
 #   defined below this _TODO_ starts out exactly the same as the code for
@@ -115,7 +122,7 @@ def draw_circles(point):
 #   just as in   draw_circles.  But if that new parameter is given the value 3,
 #   then the circles should have radii:  3  6  9  12  15  18 ..., respectively.
 #
-# TODO: 3b.
+# DONE: 3b.
 #   In   main  at the place indicated, comment-out the two existing calls
 #   to  draw_circles  and add at least two calls to the improved
 #   better_draw_circles  function, to TEST that your modified code is correct
@@ -124,7 +131,7 @@ def draw_circles(point):
 # #############################################################################
 
 
-def better_draw_circles(point):
+def better_draw_circles(point, dr):
     """
     Starts out the same as the   draw_circles   function defined ABOVE.
     You Will make it an IMPROVED, MORE POWERFUL function per the above _TODO_.
@@ -144,12 +151,12 @@ def better_draw_circles(point):
         turtle.left(90)
 
         turtle.pen_down()
-        turtle.draw_circle(15 * k)  # Radius 15, 30, 45, 60, ...
+        turtle.draw_circle(dr * k)  # Radius 15, 30, 45, 60, ...
 
 
 
 ###############################################################################
-# TODO: 4a.
+# DONE: 4a.
 #   In the previous _TODO_, you made a MORE POWERFUL version
 #   of   draw_circles   by introducing a new PARAMETER for the amount
 #   by which the radii of the concentric circles increase.
@@ -171,7 +178,7 @@ def better_draw_circles(point):
 #   to the body of the   even_better_draw_circles   function defined below.
 #   Then add parameters and modify the code to make them work!
 #
-# TODO: 4b.
+# DONE: 4b.
 #   In   main  at the place indicated, comment-out the existing calls
 #   to  better_draw_circles  and add at least two calls to the improved
 #   even_better_draw_circles  function, to TEST that your modified code is
@@ -179,13 +186,29 @@ def better_draw_circles(point):
 #
 ###############################################################################
 
-def even_better_draw_circles(point):
+def even_better_draw_circles(point, dr, num, color, thickness):
     """ An improved version of draw_circles, per the _TODO_ above. """
     # READ the above _TODO_ and then copy-paste code from better_circles here:
+    turtle = rg.SimpleTurtle()
+    turtle.pen = rg.Pen(color, thickness)
+    turtle.pen_up()
+    turtle.go_to(point)
+    turtle.set_heading(0)  # Point "east" (towards the right)
 
+    for k in range(1, num):  # k becomes 1, 2, 3, ... 10
+
+        turtle.pen_up()
+
+        # Go DOWN 15 pixels, ending up pointing east again
+        turtle.right(90)
+        turtle.forward(15)
+        turtle.left(90)
+
+        turtle.pen_down()
+        turtle.draw_circle(dr * k)  # Radius 15, 30, 45, 60, ...
 
 ###############################################################################
-# TODO: 5.
+# DONE: 5.
 #
 # Finally, comment-out the existing calls to  even_better_draw_circles  and
 # add code in   main  to draw various circles that form a BEAUTIFUL picture!
